@@ -16,3 +16,8 @@
   
 
 ## Create Front End
+
+- Create a class when selecting a color
+- call class when creating a game
+- call class when playing a game
+- call class when charging switch
