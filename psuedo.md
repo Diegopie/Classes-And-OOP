@@ -14,10 +14,22 @@
 - Play with it
 - Create Super Methods
   
-
 ## Create Front End
 
-- Create a class when selecting a color
+### Create a class when selecting a color
+
+- Where are we going to store it? Intro useRef
+- Set State for What WILL update on render
+  
+### Disable Buttons onClick
+
+- useRef to create a reference to button container
+- useEffect to listen to any interaction to createSwitch function
+
+### Sell Switch Button
+
 - call class when creating a game
 - call class when playing a game
 - call class when charging switch
+
+add a confirm button

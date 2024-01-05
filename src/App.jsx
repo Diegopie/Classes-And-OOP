@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { NintendoSwitch } from './data/Switch'
 import './App.css'
 import { Button, Col, Container, FormLabel, Row } from 'react-bootstrap'
@@ -12,6 +12,9 @@ function App() {
   // Make this after play games fails to load
   const [allGames, setAllGames] = useState([]);
   const [batteryLife, setBatteryLife] = useState(0);
+
+  const selectSwitchButtons = useRef();
+  console.log(selectSwitchButtons);
 
   const createSwitch = (color) => {
     setUserSwitch((prevState) => {
@@ -38,13 +41,9 @@ function App() {
             <img className='w-50' src='https://assets.nintendo.com/image/upload/c_fill,w_1200/q_auto:best/f_auto/dpr_2.0/ncom/en_US/products/hardware/nintendo-switch-red-blue/110478-nintendo-switch-neon-blue-neon-red-front-screen-on-1200x675' />
           </Col>
           <Col>
-            <Row>
-              <Button className='mt-1 w-25' onClick={() => createSwitch('yellow')}>Yellow</Button>
-            </Row>
-            <Row>
-              <Button className='mt-1 w-25' onClick={() => createSwitch('blue')}>Blue</Button>
-            </Row>
-            <Row>
+            <Row ref={selectSwitchButtons} className='flex flex-column'>
+              <Button className='mt-1 w-25' onClick={() => createSwitch('yellow')}>Yellow</Button>           
+              <Button className='mt-1 w-25' onClick={() => createSwitch('blue')}>Blue</Button>            
               <Button className='mt-1 w-25' onClick={() => createSwitch('pink')}>Pink</Button>
             </Row>
           </Col>
