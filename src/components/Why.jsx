@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 import { NintendoSwitch } from '../data/how'
-import './App.css'
-import { Button, Col, Container, FormCheck, FormLabel, Row } from 'react-bootstrap'
+// import './App.css'
+import { Button, Col, Container, Row } from 'react-bootstrap'
 
 function Why() {
 
@@ -135,14 +135,11 @@ function Why() {
 
                 alert(userSwitch.current.installGame(installGameValue.current.value.trim()))
               
-                setAllGames((prev) => {
-                  console.log(prev);
-                  // prev = userSwitch.current.getGamesInstalled();
-                  console.log(prev);
-                  return prev;
-                })
+                // * The reference to the array is the same, so react to doesn't detect the change, even it is storing the value. You won't see the changes until you force react to rerender by saving or changing state somewhere else
+                // setAllGames(userSwitch.current.getGamesInstalled());
+                setAllGames([...userSwitch.current.getGamesInstalled()]);
 
-
+ 
               }}>
                 <label htmlFor='installGameValue'>Install A Game</label>
                 <input type='text' name='installGameValue' ref={installGameValue} />

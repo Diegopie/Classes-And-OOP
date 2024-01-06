@@ -30,8 +30,4 @@
 
 - reset ref and classes
 
-- call class when creating a game
-- call class when playing a game
-- call class when charging switch
 
-add a confirm button
